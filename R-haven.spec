@@ -4,7 +4,7 @@
 #
 Name     : R-haven
 Version  : 1.1.1
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/haven_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/haven_1.1.1.tar.gz
 Summary  : Import and Export 'SPSS', 'Stata' and 'SAS' Files
