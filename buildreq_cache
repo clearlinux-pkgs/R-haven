@@ -1,0 +1,6 @@
+2.0.0
+R-forcats
+R-readr
+R-tibble
+pkgconfig(zlib)
+zlib-dev
