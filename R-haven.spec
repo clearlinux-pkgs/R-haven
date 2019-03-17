@@ -4,19 +4,22 @@
 #
 Name     : R-haven
 Version  : 2.1.0
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/haven_2.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/haven_2.1.0.tar.gz
 Summary  : Import and Export 'SPSS', 'Stata' and 'SAS' Files
 Group    : Development/Tools
 License  : MIT
 Requires: R-haven-lib = %{version}-%{release}
-Requires: R-forcats
-Requires: R-readr
-Requires: R-tibble
+Requires: R-cli
+Requires: R-hms
+Requires: R-utf8
+BuildRequires : R-cli
 BuildRequires : R-forcats
+BuildRequires : R-hms
 BuildRequires : R-readr
 BuildRequires : R-tibble
+BuildRequires : R-utf8
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(zlib)
 BuildRequires : zlib-dev
@@ -40,10 +43,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550597242
+export SOURCE_DATE_EPOCH=1552840983
 
 %install
-export SOURCE_DATE_EPOCH=1550597242
+export SOURCE_DATE_EPOCH=1552840983
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -79,8 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library haven|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  haven || :
 
 
 %files
@@ -117,7 +119,55 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/haven/help/paths.rds
 /usr/lib64/R/library/haven/html/00Index.html
 /usr/lib64/R/library/haven/html/R.css
-/usr/lib64/R/library/haven/libs/symbols.rds
+/usr/lib64/R/library/haven/tests/testthat.R
+/usr/lib64/R/library/haven/tests/testthat/datetime-d.dta
+/usr/lib64/R/library/haven/tests/testthat/datetime.sas7bdat
+/usr/lib64/R/library/haven/tests/testthat/datetime.sav
+/usr/lib64/R/library/haven/tests/testthat/formats.sas7bcat
+/usr/lib64/R/library/haven/tests/testthat/hadley.sas7bdat
+/usr/lib64/R/library/haven/tests/testthat/hadley.zip
+/usr/lib64/R/library/haven/tests/testthat/helper-lump.R
+/usr/lib64/R/library/haven/tests/testthat/helper-roundtrip.R
+/usr/lib64/R/library/haven/tests/testthat/labelled-num-na.sav
+/usr/lib64/R/library/haven/tests/testthat/labelled-num.sav
+/usr/lib64/R/library/haven/tests/testthat/labelled-output.txt
+/usr/lib64/R/library/haven/tests/testthat/labelled-spss-output.txt
+/usr/lib64/R/library/haven/tests/testthat/labelled-str.sav
+/usr/lib64/R/library/haven/tests/testthat/notes.dta
+/usr/lib64/R/library/haven/tests/testthat/pillar_double.txt
+/usr/lib64/R/library/haven/tests/testthat/pillar_integer.txt
+/usr/lib64/R/library/haven/tests/testthat/pillar_spss_integer.txt
+/usr/lib64/R/library/haven/tests/testthat/pillar_string.txt
+/usr/lib64/R/library/haven/tests/testthat/pillar_tagged_na.txt
+/usr/lib64/R/library/haven/tests/testthat/tagged-na-double.dta
+/usr/lib64/R/library/haven/tests/testthat/tagged-na-int.dta
+/usr/lib64/R/library/haven/tests/testthat/tagged-na.sas7bcat
+/usr/lib64/R/library/haven/tests/testthat/tagged-na.sas7bdat
+/usr/lib64/R/library/haven/tests/testthat/tagged-na.txt
+/usr/lib64/R/library/haven/tests/testthat/test-as-factor.R
+/usr/lib64/R/library/haven/tests/testthat/test-labelled.R
+/usr/lib64/R/library/haven/tests/testthat/test-labelled_spss.R
+/usr/lib64/R/library/haven/tests/testthat/test-pillar.R
+/usr/lib64/R/library/haven/tests/testthat/test-read-connection.R
+/usr/lib64/R/library/haven/tests/testthat/test-read-sas.R
+/usr/lib64/R/library/haven/tests/testthat/test-read-sav.R
+/usr/lib64/R/library/haven/tests/testthat/test-read-stata.R
+/usr/lib64/R/library/haven/tests/testthat/test-read-xpt.R
+/usr/lib64/R/library/haven/tests/testthat/test-replace_with.R
+/usr/lib64/R/library/haven/tests/testthat/test-tagged_na.R
+/usr/lib64/R/library/haven/tests/testthat/test-utils.R
+/usr/lib64/R/library/haven/tests/testthat/test-write-dta.R
+/usr/lib64/R/library/haven/tests/testthat/test-write-sas.R
+/usr/lib64/R/library/haven/tests/testthat/test-write-sav.R
+/usr/lib64/R/library/haven/tests/testthat/test-write-xpt.R
+/usr/lib64/R/library/haven/tests/testthat/test-zap-empty.R
+/usr/lib64/R/library/haven/tests/testthat/test-zap_label.R
+/usr/lib64/R/library/haven/tests/testthat/test-zap_labels.R
+/usr/lib64/R/library/haven/tests/testthat/test-zap_missing.R
+/usr/lib64/R/library/haven/tests/testthat/test-zap_widths.R
+/usr/lib64/R/library/haven/tests/testthat/types.dta
+/usr/lib64/R/library/haven/tests/testthat/umlauts.sav
+/usr/lib64/R/library/haven/tests/testthat/variable-label.sav
 
 %files lib
 %defattr(-,root,root,-)

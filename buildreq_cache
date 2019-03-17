@@ -1,6 +1,9 @@
 2.1.0
+R-cli
 R-forcats
+R-hms
 R-readr
 R-tibble
+R-utf8
 pkgconfig(zlib)
 zlib-dev
