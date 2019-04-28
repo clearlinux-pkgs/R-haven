@@ -4,16 +4,22 @@
 #
 Name     : R-haven
 Version  : 2.1.0
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/haven_2.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/haven_2.1.0.tar.gz
 Summary  : Import and Export 'SPSS', 'Stata' and 'SAS' Files
 Group    : Development/Tools
 License  : MIT
 Requires: R-haven-lib = %{version}-%{release}
+Requires: R-Rcpp
+Requires: R-pillar
+Requires: R-pkgconfig
+BuildRequires : R-Rcpp
 BuildRequires : R-cli
 BuildRequires : R-forcats
 BuildRequires : R-hms
+BuildRequires : R-pillar
+BuildRequires : R-pkgconfig
 BuildRequires : R-readr
 BuildRequires : R-tibble
 BuildRequires : R-utf8
@@ -40,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552895045
+export SOURCE_DATE_EPOCH=1556473807
 
 %install
-export SOURCE_DATE_EPOCH=1552895045
+export SOURCE_DATE_EPOCH=1556473807
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -79,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  haven || :
+R CMD check --no-manual --no-examples --no-codoc haven || :
 
 
 %files
