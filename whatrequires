@@ -1,5 +1,7 @@
 # This file contains recursive sources that require this package
+R-AER
 R-RcmdrMisc
+R-car
 R-labelled
 R-rio
 R-tidyverse

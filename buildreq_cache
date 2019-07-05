@@ -1,4 +1,4 @@
-2.1.0
+2.1.1
 R-Rcpp
 R-cli
 R-forcats
@@ -6,6 +6,7 @@ R-hms
 R-pillar
 R-pkgconfig
 R-readr
+R-stringi
 R-tibble
 R-utf8
 pkgconfig(zlib)
