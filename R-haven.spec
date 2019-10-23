@@ -4,10 +4,10 @@
 #
 Name     : R-haven
 Version  : 2.1.1
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/haven_2.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/haven_2.1.1.tar.gz
-Summary  : Import and Export 'SPSS', 'Stata' and 'SAS' Files
+Summary  : Import and Export SPSS, Stata and SAS Files
 Group    : Development/Tools
 License  : MIT
 Requires: R-haven-lib = %{version}-%{release}
@@ -15,16 +15,20 @@ Requires: R-Rcpp
 Requires: R-forcats
 Requires: R-hms
 Requires: R-readr
-Requires: R-stringi
 Requires: R-tibble
 BuildRequires : R-Rcpp
+BuildRequires : R-cli
 BuildRequires : R-forcats
 BuildRequires : R-hms
+BuildRequires : R-pillar
+BuildRequires : R-pkgconfig
 BuildRequires : R-readr
 BuildRequires : R-stringi
 BuildRequires : R-tibble
+BuildRequires : R-utf8
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(zlib)
+BuildRequires : util-linux
 BuildRequires : zlib-dev
 
 %description
@@ -46,10 +50,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562311907
+export SOURCE_DATE_EPOCH=1571841690
 
 %install
-export SOURCE_DATE_EPOCH=1562311907
+export SOURCE_DATE_EPOCH=1571841690
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

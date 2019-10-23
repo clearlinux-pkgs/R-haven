@@ -10,4 +10,5 @@ R-stringi
 R-tibble
 R-utf8
 pkgconfig(zlib)
+util-linux
 zlib-dev
