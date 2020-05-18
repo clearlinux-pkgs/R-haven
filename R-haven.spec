@@ -4,10 +4,10 @@
 #
 Name     : R-haven
 Version  : 2.2.0
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/haven_2.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/haven_2.2.0.tar.gz
-Summary  : Import and Export SPSS, Stata and SAS Files
+Summary  : Import and Export 'SPSS', 'Stata' and 'SAS' Files
 Group    : Development/Tools
 License  : MIT
 Requires: R-haven-lib = %{version}-%{release}
@@ -27,10 +27,9 @@ BuildRequires : R-tibble
 BuildRequires : R-tidyselect
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(zlib)
-BuildRequires : zlib-dev
 
 %description
-# haven <a href='https:/haven.tidyverse.org'><img src='man/figures/logo.png' align="right" height="139" /></a>
+embedded 'ReadStat' C library,
 
 %package lib
 Summary: lib components for the R-haven package.
@@ -42,21 +41,22 @@ lib components for the R-haven package.
 
 %prep
 %setup -q -c -n haven
+cd %{_builddir}/haven
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573219102
+export SOURCE_DATE_EPOCH=1589772823
 
 %install
-export SOURCE_DATE_EPOCH=1573219102
+export SOURCE_DATE_EPOCH=1589772823
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

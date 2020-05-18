@@ -1,14 +1,2 @@
 2.2.0
-R-Rcpp
-R-cli
-R-forcats
-R-hms
-R-pillar
-R-pkgconfig
-R-readr
-R-stringi
-R-tibble
-R-utf8
 pkgconfig(zlib)
-util-linux
-zlib-dev
