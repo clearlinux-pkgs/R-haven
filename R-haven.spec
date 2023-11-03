@@ -5,7 +5,7 @@
 #
 Name     : R-haven
 Version  : 2.5.3
-Release  : 65
+Release  : 66
 URL      : https://cran.r-project.org/src/contrib/haven_2.5.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/haven_2.5.3.tar.gz
 Summary  : Import and Export 'SPSS', 'Stata' and 'SAS' Files
